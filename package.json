@@ -21,19 +21,7 @@
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
-    "@frontiers-sass/common": "^2.2.6",
-    "@frontiers-vue/layout": "^1.8.2",
-    "@frontiers-vue/search-input": "^3.3.2",
-    "@frontiers-vue/side-menu-plus": "^1.0.6",
-    "@frontiers-vue/table": "^3.18.1",
-    "@frontiers-vue/tabs": "^1.6.1",
     "@nuxt/vue-renderer": "2.15.7",
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/axios": "^5.13.1",
