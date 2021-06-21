@@ -1,0 +1,92 @@
+{
+  "name": "workflow-builder-ui",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=12.13 < 15"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "gql:get-schema": "apollo schema:download --header=\"x-hasura-admin-secret: d7EZzix2G98aMh51guE6jx0E97Xrq2g0Dcr2aO88NFv5eYCWYsJJR3dJYqIIasek\" --endpoint=https://sharing-bug-44.hasura.app/v1/graphql apollo/schema.json",
+    "gql:generate-types": "apollo codegen:generate --header=\"x-hasura-admin-secret: d7EZzix2G98aMh51guE6jx0E97Xrq2g0Dcr2aO88NFv5eYCWYsJJR3dJYqIIasek\" --endpoint=https://sharing-bug-44.hasura.app/v1/graphql --target=typescript --includes=apollo/gql/**/*.gql --tagName=gql --no-addTypename --tsFileExtension=d.ts --outputFlat types/gql",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint",
+    "*.{css,vue}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@frontiers-sass/common": "^2.2.6",
+    "@frontiers-vue/layout": "^1.8.2",
+    "@frontiers-vue/search-input": "^3.3.2",
+    "@frontiers-vue/side-menu-plus": "^1.0.6",
+    "@frontiers-vue/table": "^3.18.1",
+    "@frontiers-vue/tabs": "^1.6.1",
+    "@nuxt/vue-renderer": "2.15.7",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/pwa": "^3.3.5",
+    "bpmn-js": "^8.5.0",
+    "core-js": "^3.9.1",
+    "dmn-js": "^10.2.0",
+    "graphql-tag": "^2.12.4",
+    "nuxt": "^2.15.3",
+    "nuxt-property-decorator": "^2.9.1",
+    "vue": "2.6.14",
+    "vue-server-renderer": "2.6.14"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@nuxt/types": "^2.15.3",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxt/typescript-runtime": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "@testing-library/vue": "^5.6.2",
+    "@types/bpmn-moddle": "^5.1.4",
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^26.0.23",
+    "@types/vue-router": "^2.0.0",
+    "@vue/test-utils": "^1.1.3",
+    "apollo": "^2.33.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "fibers": "^5.0.0",
+    "file-loader": "^6.2.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "jest-transform-graphql": "^2.1.0",
+    "lint-staged": "^10.5.4",
+    "lodash": "^4.17.21",
+    "prettier": "^2.2.1",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.32.13",
+    "sass-loader": "10",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^21.0.0",
+    "ts-jest": "^26.5.4",
+    "vue-jest": "^3.0.4"
+  }
+}

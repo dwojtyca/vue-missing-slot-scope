@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkflowsTable renders correctly 1`] = `
+<div
+  class="workflowsTable"
+>
+  <table-stub>
+    <template>
+       COLUMNS CONTENT 
+    </template>
+  </table-stub>
+</div>
+`;
